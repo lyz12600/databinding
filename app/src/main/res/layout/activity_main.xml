@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+  <data>
+    <variable
+      name="presenter"
+      type="com.lyz.databinding.activity.MainActivity.Presenter"/>
+  </data>
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:onClick="@{()->presenter.onClickListener1()}"
+      android:text="DataBindingBase"/>
+
+    <Button
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:onClick="@{()->presenter.onClickListener2()}"
+      android:text="List"/>
+    <Button
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:onClick="@{()->presenter.onClickListener3()}"
+      android:text="two-way"/>
+    <Button
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:onClick="@{()->presenter.onClickListener4()}"
+      android:text="recyclerView"/>
+    <Button
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:onClick="@{()->presenter.onClickListener5()}"
+      android:text="edittext"/>
+
+    <Button
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:onClick="@{()->presenter.onClickListener6()}"
+      android:text="onkey"/>
+  </LinearLayout>
+</layout>

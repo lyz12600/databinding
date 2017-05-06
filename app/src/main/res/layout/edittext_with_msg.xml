@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content">
+
+  <EditText
+    android:id="@+id/input_content"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_edittext"/>
+
+  <TextView
+    android:id="@+id/msg_content_right"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="3dp"
+    android:layout_alignBottom="@id/input_content"
+    android:layout_toEndOf="@+id/input_content"
+    android:layout_toRightOf="@+id/input_content"/>
+
+  <TextView
+    android:id="@+id/msg_content_bottom"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="3dp"
+    android:layout_alignEnd="@+id/input_content"
+    android:layout_below="@+id/input_content"
+    android:layout_alignRight="@+id/input_content"/>
+</RelativeLayout>

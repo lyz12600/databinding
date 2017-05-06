@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+  <data>
+    <variable
+      name="viewModel"
+      type="com.lyz.databinding.activity.EditTextActivity"/>
+  </data>
+
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.lyz.databinding.bean.EditTextWithMsg
+      android:id="@+id/temp1"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:lzg_input_content_gravity="center"
+      app:lzg_input_content_height="200px"
+      app:lzg_input_content_width="1024px"
+      app:lzg_msg_position="show_at_right"
+      app:lzg_msg_text_color="#f51c23"
+      app:lzg_msg_text_size="12px"
+      app:lzg_show_msg_content="true"/>
+
+    <com.lyz.databinding.bean.EditTextWithMsg
+      android:id="@+id/temp2"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/temp1"
+      app:lzg_input_content_height="200px"
+      app:lzg_input_content_width="1024px"
+      app:lzg_msg_position="show_at_bottom"
+      app:lzg_msg_text_color="#f51c23"
+      app:lzg_msg_text_size="12px"
+      app:lzg_show_msg_content="true"/>
+
+    <Button
+      android:id="@+id/btn"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"
+      android:onClick="changeBg"
+      android:text="变红"/>
+  </LinearLayout>
+</layout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+  <data>
+    <import type="android.view.View"/>
+    <variable
+      name="bean"
+      type="com.lyz.databinding.bean.Rec"/>
+  </data>
+  <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:focusable="true">
+
+    <ImageView
+      android:id="@+id/img"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@mipmap/ic_launcher"
+      android:visibility="@{ bean.showImage ? View.VISIBLE : View.GONE}"/>
+
+    <TextView
+      android:id="@+id/seq"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="50dp"
+      android:layout_centerVertical="true"
+      android:text="@{String.valueOf(bean.seq)}"/>
+    <TextView
+      android:id="@+id/content"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="100dp"
+      android:layout_centerVertical="true"
+      android:text="@{bean.content}"/>
+  </RelativeLayout>
+</layout>
