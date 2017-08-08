@@ -5,16 +5,12 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
-import android.util.Log;
 import android.view.KeyEvent;
-import android.view.View;
-import android.view.View.OnKeyListener;
 import com.lyz.databinding.R;
 import com.lyz.databinding.adapter.RecAdapter;
 import com.lyz.databinding.bean.Rec;
 import com.lyz.databinding.databinding.ActivityRecBinding;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -97,15 +93,15 @@ public class RecActivity extends AppCompatActivity {
   //未点重
   public void turnOver(int type) {
     rec.setShowFocus(false);
-    adapter.notifyItemChanged(currentIndex);
+    adapter.notifyItemChanged(currentIndex, 2);
     if (type == 0) {
-      currentIndex--;
+      --currentIndex;
     } else {
-      currentIndex++;
+      ++currentIndex;
     }
     rec = adapter.mlists.get(currentIndex);
     rec.setShowFocus(true);
-    adapter.notifyItemChanged(currentIndex);
+    adapter.notifyItemChanged(currentIndex, 2);
   }
 
   //onkey 保证每个item在前台可见
@@ -121,17 +117,12 @@ public class RecActivity extends AppCompatActivity {
   }
 
   public void changeItem(int type) {
-    rec.setShowFocus(false);
-    rec.setShowImage(false);
-    adapter.notifyItemChanged(currentIndex);
+    adapter.notifyItemChanged(currentIndex, 0);
     if (type == 0) {
       Collections.swap(mlists, currentIndex--, currentIndex);
     } else {
       Collections.swap(mlists, currentIndex++, currentIndex);
     }
-    rec = mlists.get(currentIndex);
-    rec.setShowFocus(true);
-    rec.setShowImage(true);
-    adapter.notifyItemChanged(currentIndex);
+    adapter.notifyItemChanged(currentIndex, 0);
   }
 }

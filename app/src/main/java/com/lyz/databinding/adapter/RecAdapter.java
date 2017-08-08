@@ -2,8 +2,12 @@ package com.lyz.databinding.adapter;
 
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
+import android.databinding.repacked.org.antlr.v4.runtime.atn.LookaheadEventInfo;
+import android.support.v7.view.menu.MenuView.ItemView;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.LayoutManager;
+import android.support.v7.widget.RecyclerView.ViewHolder;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import com.lyz.databinding.BR;
@@ -42,9 +46,12 @@ public class RecAdapter extends RecyclerView.Adapter<BindingViewHolder> {
   @Override
   public void onBindViewHolder(BindingViewHolder holder, int position) {
     Rec rec = mlists.get(position);
+    Log.e("fei-lyz", String.valueOf(rec.getShowFocus()) + "***" + position);
     if (rec.getShowFocus()) {
+      Log.e("fei-lyz", "focus" + "**" + rec.getShowFocus());
       holder.itemView.setBackgroundResource(R.drawable.recyclerview_focous_bg);
     } else {
+      Log.e("fei-lyz", "normal" + "**" + rec.getShowFocus());
       holder.itemView.setBackgroundResource(R.drawable.normal);
     }
 
@@ -55,6 +62,28 @@ public class RecAdapter extends RecyclerView.Adapter<BindingViewHolder> {
   @Override
   public void onBindViewHolder(BindingViewHolder holder, int position, List<Object> payloads) {
     super.onBindViewHolder(holder, position, payloads);
+    if (payloads.isEmpty()) {
+      onBindViewHolder(holder, position);
+    } else {
+      int i = (int) payloads.get(0);
+      switch (i) {
+        case 0:
+          Log.e("lyz", String.valueOf(i));
+          break;
+        case 2:
+          Log.e("lyz", String.valueOf(i) + "$$$$" + position);
+//          Rec rec = mlists.get(position);
+//          Log.e("lyz", String.valueOf(rec.getShowFocus()));
+//          if (rec.getShowFocus()) {
+//            Log.e("payload", "normal");
+//            holder.itemView.setBackgroundResource(R.drawable.normal);
+//          } else {
+//            Log.e("payload", "focus");
+//            holder.itemView.setBackgroundResource(R.drawable.recyclerview_focous_bg);
+//          }
+          break;
+      }
+    }
   }
 
   @Override
